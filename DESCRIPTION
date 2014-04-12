@@ -1,0 +1,17 @@
+Package: RApiSerialize
+Type: Package
+Title: R API Serialization 
+Version: 0.1.0
+Date: 2014-04-12
+Author: Dirk Eddelbuettel, Junji Nakano, Ei-ji Nakama, and R Core (original code)
+Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Description: This package provides other packages with access to the internal 
+ R serialization code. Access is provided at the C function level via the
+ registered function facility.
+ .
+ This packages builds on the Rhpc package by Junji Nakano and Ei-ji Nakama
+ which also includes a (partial) copy of the file src/main/serialize.c from R
+ itself. 
+ .
+ The R Core group is the original authors of the serialization code.
+License: GPL (>= 2)

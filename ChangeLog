@@ -1,0 +1,13 @@
+2014-04-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Initial Version 0.1.0
+
+	* src/serialize.cpp: With credits to Junji, Ei-ji and R Core
+	* src/init.c: Exporting for use by other R package
+
+	* inst/include/RApiSerializeAPI.h: Exported header used by others
+
+	* R/serialization.R: Simple R wrappers for testing
+
+	* man/RApiSerialize-package.Rd: Basic documentation
+
