@@ -22,10 +22,10 @@ of this package
 
 ## Copyrights
 
-Copyrights are held by the respective authors, in particular 
-Junji Nakano and Ei-ji Nakama as well as the R Core Team  
-for the intial version of the actual serialization code, and 
-Dirk Eddelbuettel for subsequent modificatons and the remainder 
+Copyrights are held by the respective authors, in particular
+Junji Nakano and Ei-ji Nakama as well as the R Core Team
+for the intial version of the actual serialization code, and
+Dirk Eddelbuettel for subsequent modificatons and the remainder
 of the package.
 
 ## License
