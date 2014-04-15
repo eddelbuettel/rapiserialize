@@ -1,3 +1,14 @@
+2014-04-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* tests/simpleTests.R: Added simple test script
+	* tests/simpleTests.Rout.save: Added reference output
+
+	* src/serialize.cpp: Removed to/from char functions
+	* src/init.c: Removed interface for to/from char functions
+	* inst/include/RApiSerializeAPI.h: Ditto
+	* R/serialization.R: Ditto
+	* man/RApiSerialize-package.Rd: Ditto
+
 2014-04-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION: Initial Version 0.1.0

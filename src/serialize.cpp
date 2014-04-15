@@ -24,8 +24,7 @@
 
 
 // serialize/unserialize from Rhpc package, which takes it from R-3.0.2
-// also toyed with binary serialization (as alternative) to ascii
-// and coupled with charToRaw / rawToChar conversions to make it useful for Redis
+// also looked into with binary serialization (as alternative) to ascii
 
 
 /*
@@ -207,68 +206,6 @@ extern "C" SEXP serializeToRaw(SEXP object) {
        calling OutTerm so it doesn't get called twice */
 
     return val;
-}
-
-extern "C" SEXP serializeToChar(SEXP object) {
-    struct R_outpstream_st out;
-    R_pstream_format_t type;
-    int version;
-    struct membuf_st mbs;
-    SEXP val;
-    
-    version = R_DefaultSerializeVersion;
-    //type = R_pstream_binary_format;
-    //type = R_pstream_ascii_format;
-    type = R_pstream_xdr_format;
-    
-
-    /* set up a context which will free the buffer if there is an error */
-    
-    InitMemOutPStream(&out, &mbs, type, version, NULL, R_NilValue);
-    R_Serialize(object, &out);
-    
-    val =  CloseMemOutPStream(&out);
-    
-    /* end the context after anything that could raise an error but before
-       calling OutTerm so it doesn't get called twice */
-
-
-    // borrowed from rawToChar
-    SEXP ans;
-    int i, j, nc = LENGTH(val);
-    /* String is not necessarily 0-terminated and may contain nuls.
-       Strip trailing nuls */
-    for (i = 0, j = -1; i < nc; i++) if(RAW(val)[i]) j = i;
-    nc = j + 1;
-    PROTECT(ans = allocVector(STRSXP, 1));
-    SET_STRING_ELT(ans, 0,
-                   mkCharLenCE((const char *)RAW(val), j+1, CE_NATIVE));
-    UNPROTECT(1);
-
-    return ans;
-}
-
-
-extern "C" SEXP unserializeFromChar(SEXP object) {
-    // borrowed from charToRaw
-    int nc = LENGTH(STRING_ELT(object, 0));
-    SEXP ans = allocVector(RAWSXP, nc);
-    memcpy(RAW(ans), CHAR(STRING_ELT(object, 0)), nc);
-
-
-    struct R_inpstream_st in;
-
-    /* We might want to read from a long raw vector */
-    struct membuf_st mbs;
-
-    if (TYPEOF(ans) == RAWSXP) {
-        void *data = RAW(ans);
-        R_xlen_t length = XLENGTH(ans);
-        InitMemInPStream(&in, &mbs, data,  length, NULL, NULL);
-        return R_Unserialize(&in);
-    }
-    error("can't unserialize object");
-    return(R_UnboundValue);
 }
 
 extern "C" SEXP unserializeFromRaw(SEXP object) {

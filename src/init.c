@@ -29,16 +29,12 @@
 /*  by functions in anotherfile in this package                        */
 SEXP serializeToRaw(SEXP object);
 SEXP unserializeFromRaw(SEXP object);
-SEXP serializeToChar(SEXP object);
-SEXP unserializeFromChar(SEXP object);
 
 
 /* definition of functions provided for .Call() 			*/
 static const R_CallMethodDef callMethods[] = {
     { "serializeToRaw",    	(DL_FUNC) &serializeToRaw,          1 },
     { "unserializeToRaw",  	(DL_FUNC) &unserializeFromRaw,      1 },
-    { "serializeToChar",   	(DL_FUNC) &serializeToChar,         1 },
-    { "unserializeToChar",	(DL_FUNC) &unserializeFromRaw,      1 },
     { NULL,                	NULL,                               0 }
 };
 
@@ -52,10 +48,6 @@ void R_init_RApiSerialize(DllInfo *info) {
                         (DL_FUNC) &serializeToRaw);
     R_RegisterCCallable("RApiSerialize", "unserializeFromRaw",  
                         (DL_FUNC) &unserializeFromRaw);
-    R_RegisterCCallable("RApiSerialize", "serializeToChar", 
-                        (DL_FUNC) &serializeToChar);
-    R_RegisterCCallable("RApiSerialize", "unserializeFromChar",  
-                        (DL_FUNC) &unserializeFromChar);
 
     R_registerRoutines(info,
                        NULL,		/* slot for .C */

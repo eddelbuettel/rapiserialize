@@ -1,8 +1,6 @@
 \name{RApiSerialize-package}
 \alias{RApiSerialize-package}
 \alias{RApiSerialize}
-\alias{serializeToChar}
-\alias{unserializeFromChar}
 \alias{serializeToRaw}
 \alias{unserializeFromRaw}
 \docType{package}
@@ -14,14 +12,12 @@
   R serialization code. Access is provided at the C function level via the
   registered function facility
 
-  For convenience and testing purposes, four wrapper functions are also
-  provided at the R level..
+  For convenience and testing purposes, two wrapper functions are also
+  provided at the R level.
 }
 \usage{
   serializeToRaw(obj)
   unserializeFromRaw(obj)
-  serializeToChar(obj)
-  unserializeFromChar(obj)
 }
 \arguments{
   \item{obj}{An R object which is going to (un)serialized by the corresponding function.}

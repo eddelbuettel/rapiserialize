@@ -1,0 +1,39 @@
+
+R version 3.1.0 (2014-04-10) -- "Spring Dance"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: i686-pc-linux-gnu (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+> library(RApiSerialize)
+> 
+> data(trees)
+> fit <- lm(log(Girth) ~ log(Volume) + log(Height), trees)
+> 
+> ## serialize and use R's unserialize
+> identical(unserialize(serializeToRaw(fit)), fit)
+[1] TRUE
+> ## serialize and use our unserialize
+> identical(unserializeFromRaw(serializeToRaw(fit)), fit)
+[1] TRUE
+> ## R's serialize and our unserialize
+> identical(unserializeFromRaw(serialize(fit, NULL)), fit)
+[1] TRUE
+> ## R's serialize and R's unserialize (doh)
+> identical(unserialize(serialize(fit, NULL)), fit)
+[1] TRUE
+> 
+> proc.time()
+   user  system elapsed 
+  0.304   0.448   0.269 
