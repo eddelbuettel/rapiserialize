@@ -29,6 +29,11 @@
 
   This package aims to fill this gap by providing access to the same
   functionality, at the cost of making a copy.
+
+  To use the serialization and deserialization code provided here, a
+  client package simply adds \code{LinkingTo: RApiSerialize} in its
+  \code{DESCRIPTION} file and includes the header file
+  \code{RApiSerializeAPI.h}.
 }
 \author{
   Dirk Eddelbuettel put together this package, based on earlier work by

@@ -34,7 +34,7 @@ SEXP unserializeFromRaw(SEXP object);
 /* definition of functions provided for .Call() 			*/
 static const R_CallMethodDef callMethods[] = {
     { "serializeToRaw",    	(DL_FUNC) &serializeToRaw,          1 },
-    { "unserializeToRaw",  	(DL_FUNC) &unserializeFromRaw,      1 },
+    { "unserializeFromRaw",  	(DL_FUNC) &unserializeFromRaw,      1 },
     { NULL,                	NULL,                               0 }
 };
 
