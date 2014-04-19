@@ -16,5 +16,5 @@ Description: This package provides other packages with access to the internal
  itself. 
  .
  The R Core group is the original author of the serialization code made
- avaialable by this package.
+ available by this package.
 License: GPL (>= 2)
