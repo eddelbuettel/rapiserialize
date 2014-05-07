@@ -1,3 +1,8 @@
+2014-05-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (and other files): Per email by Junji, reordered all
+	references to first list Ei-ji and then him
+
 2014-04-19  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION: Finalizing initial public version 0.1.0
@@ -22,7 +27,7 @@
 
 	* DESCRIPTION: Prepating initial version 0.1.0
 
-	* src/serialize.cpp: With credits to Junji, Ei-ji and R Core
+	* src/serialize.cpp: With credits to Ei-ji, Junji, and R Core
 	* src/init.c: Exporting for use by other R package
 
 	* inst/include/RApiSerializeAPI.h: Exported header used by others

@@ -37,7 +37,7 @@
 }
 \author{
   Dirk Eddelbuettel put together this package, based on earlier work by
-  Junji Nakano and Ei-ji Nakama who also included the C code from R for
+  Ei-ji Nakama and Junji Nakano who also included the C code from R for
   serialization in their \pkg{Rhpc} package.  R Core wrote the
   underlying C code for use in R itself.
 

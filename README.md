@@ -11,7 +11,7 @@ just impatient and want the result faster.
 
 This package owes a lot of debt to the
 [Rhpc](http://cran.rstudio.com/package=Rhpc) package by 
-Junji Nakano and Ei-ji Nakama. It gave me the idea of using a copy of the
+Ei-ji Nakama and Junji Nakano. It gave me the idea of using a copy of the
 code which is not exported by R itself.  And of course credit is due to the R
 Core team for writing R, and the code used here.
 
@@ -23,7 +23,7 @@ of this package
 ## Copyrights
 
 Copyrights are held by the respective authors, in particular
-Junji Nakano and Ei-ji Nakama as well as the R Core Team
+Ei-ji Nakama and Junji Nakano as well as the R Core Team
 for the intial version of the actual serialization code, and
 Dirk Eddelbuettel for subsequent modificatons and the remainder
 of the package.
