@@ -27,6 +27,17 @@
 // also looked into with binary serialization (as alternative) to ascii
 
 
+// this file does a subset of the things done by src/main/serialize.c,
+// inparticular, in the serializeToRaw() function
+//    version = R_DefaultSerializeVersion;
+//    type = R_pstream_xdr_format;
+// ie no binary or ascii 'type' is supported. Similarly, in 
+// function  unserializeFromRaw() only TYPEOF(object)==RAWSXP is
+// supported, and no 'hook' or 'fun' arguments are supported
+//
+// last checked agains R-devel in March 2015 prior to the R 3.2.0 release 
+
+
 /*
  *
  * From R-3.0.2 archive, src/main/serialize.c 

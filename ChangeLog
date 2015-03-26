@@ -1,3 +1,8 @@
+2015-03-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/serialize.cpp: Added some comments regarding differences
+	between this file and the original src/main/serialize.c code
+
 2014-05-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (and other files): Per email by Junji, reordered all
