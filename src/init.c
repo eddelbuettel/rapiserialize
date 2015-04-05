@@ -43,7 +43,7 @@ static const R_CallMethodDef callMethods[] = {
 /* the functions we are exporting here					*/
 void R_init_RApiSerialize(DllInfo *info) {
 
-    /* used by external packages linking to internal xts code from C */
+    /* used by external packages linking to internal serialization code from C */
     R_RegisterCCallable("RApiSerialize", "serializeToRaw", 
                         (DL_FUNC) &serializeToRaw);
     R_RegisterCCallable("RApiSerialize", "unserializeFromRaw",  
