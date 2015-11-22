@@ -1,4 +1,4 @@
-## RApiSerialize
+## RApiSerialize [![Build Status](https://travis-ci.org/eddelbuettel/rapiserialize.svg)](https://travis-ci.org/eddelbuettel/rapiserialize) [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/RApiSerialize)](http://cran.rstudio.com/package=RApiSerialize) [![Downloads](http://cranlogs.r-pkg.org/badges/RApiSerialize?color=brightgreen)](http://www.r-pkg.org/pkg/RApiSerialize)
 
 This package provides C-level serialization as R does for itself. It is
 useful if you are writing C (or C++) code in an R package which needs to
@@ -32,6 +32,3 @@ of the package.
 
 GPL (>= 2)
 
-## Status
-
-[![Build Status](https://travis-ci.org/eddelbuettel/rapiserialize.png)](https://travis-ci.org/eddelbuettel/rapiserialize)
