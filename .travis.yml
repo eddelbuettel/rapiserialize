@@ -1,28 +1,33 @@
-# Sample .travis.yml for R projects.
-#
-# See https://github.com/eddelbuettel/r-travis/
-# and https://github.com/craigcitro/r-travis
+# Run Travis CI for R using https://eddelbuettel.github.io/r-travis/
 
-env:
-  global:
-    - _R_CHECK_FORCE_SUGGESTS_=FALSE
+language: c
+
+sudo: required
+
+dist: trusty
 
 before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
+  - curl -OLs https://eddelbuettel.github.io/r-travis/run.sh && chmod 0755 run.sh
+  # optionally add our launchpad repo, but not needed here
+  # - sudo add-apt-repository -y ppa:edd/misc
+  - ./run.sh bootstrap
 
-install:
-  #- ./travis-tool.sh install_aptget r-cran-runit
-
-script: 
-  - ./travis-tool.sh run_tests
+#install:
+#  - ./run.sh install_aptget 
+  
+script:
+  - ./run.sh run_tests
 
 after_failure:
-  - ./travis-tool.sh dump_logs
+  - ./run.sh dump_logs
 
+#after_success:
+#  - ./run.sh coverage
+   
 notifications:
   email:
     on_success: change
     on_failure: change
-
+        
+    
+    

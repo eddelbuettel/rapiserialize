@@ -2,6 +2,12 @@
 \title{News for Package \pkg{RApiSerialize}}
 \newcommand{\cpkg}{\href{http://CRAN.R-project.org/package=#1}{\pkg{#1}}}
 
+\section{Changes in version 0.1.1 (2017-xx-yy)}{
+  \itemize{
+    \item Updated Travis CI support via newer \code{run.sh}
+  }
+}
+
 \section{Changes in version 0.1.0 (2014-04-19)}{
   \itemize{
     \item Initial public version and CRAN upload
