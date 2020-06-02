@@ -2,6 +2,8 @@
 
 	* README.md: Added 'last commit' badge
 
+	* .travis.yml: Switch to R 4.0.0 and bionic
+
 2019-01-03  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll minor version
