@@ -1,6 +1,7 @@
 ## RApiSerialize: C-level Serialization from R 
 
 [![Build Status](https://travis-ci.org/eddelbuettel/rapiserialize.svg)](https://travis-ci.org/eddelbuettel/rapiserialize) 
+[![CI](https://github.com/eddelbuettel/rapiserialize/workflows/ci/badge.svg)](https://github.com/eddelbuettel/rapiserialize/actions?query=workflow%3Aci)
 [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN](http://www.r-pkg.org/badges/version/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize) 
 [![Dependencies](https://tinyverse.netlify.com/badge/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize) 

@@ -1,6 +1,7 @@
 2021-01-01  Dirk Eddelbuettel  <edd@debian.org>
 
         * .github/workflows/ci.yaml: Add CI runner using r-ci
+	* README.md: Add new CI badge
 
 2020-06-02  Dirk Eddelbuettel  <edd@debian.org>
 
