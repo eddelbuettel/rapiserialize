@@ -13,4 +13,6 @@ Description: Access to the internal R serialization code is provided for
  (partial) copy of the file src/main/serialize.c from R itself. The R Core
  group is the original author of the serialization code made available by
  this package. 
+URL: https://github.com/eddelbuettel/rapiserialize, https://dirk.eddelbuettel.com/code/rapiserialize.html
+BugReports: https://github.com/eddelbuettel/rapiserialize/issues
 License: GPL (>= 2)
