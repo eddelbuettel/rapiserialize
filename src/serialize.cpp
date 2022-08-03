@@ -209,6 +209,9 @@ extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue) {
     } else {
       version = Rf_asInteger(versionSexp);
     }
+    if (version == NA_INTEGER || version <= 0) {
+	Rf_error("bad version value");
+    }
 
     //type = R_pstream_binary_format;
     //type = R_pstream_ascii_format;

@@ -17,6 +17,9 @@
 
 	* src/serialize.cpp (CloseMemOutPStream): Minor upstream update
 
+	* tests/simpleTests.R: Updated tests
+	* tests/simpleTests.Rout.save: Idem
+
 2021-04-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (URL, BugRreports): Added to DESCRIPTION file
