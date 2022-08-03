@@ -1,7 +1,7 @@
 
 ##  RApiSerialize -- Packge to provide Serialization as in the R API
 ##
-##  Copyright (C) 2014         Dirk Eddelbuettel
+##  Copyright (C) 2014 - 2022  Dirk Eddelbuettel
 ##
 ##  This file is part of RApiSerialize.
 ##
@@ -19,9 +19,9 @@
 ##  along with RApiSerialize.  If not, see <http://www.gnu.org/licenses/>.
 
 serializeToRaw <- function(obj, version=2) {
-    .Call("serializeToRaw", obj, version, PACKAGE="RApiSerialize")
+    .Call(C_serializeToRaw, obj, version)
 }
 
 unserializeFromRaw <- function(obj) {
-    .Call("unserializeFromRaw", obj, PACKAGE="RApiSerialize")
+    .Call(C_unserializeFromRaw, obj)
 }

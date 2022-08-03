@@ -11,6 +11,10 @@
 
 	* README.md: Update http URLs to https
 
+	* NAMESPACE: Turn on registration and fixes for library load,
+	export two functions explicitly
+	* R/serialization.R: Use registered and fixed symbols in calls
+
 2021-04-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (URL, BugRreports): Added to DESCRIPTION file

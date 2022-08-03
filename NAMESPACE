@@ -1,2 +1,3 @@
-useDynLib(RApiSerialize)
-exportPattern("^[[:alpha:]]+")
+useDynLib(RApiSerialize, .registration=TRUE, .fixes = "C_")
+export("serializeToRaw",
+       "unserializeFromRaw")
