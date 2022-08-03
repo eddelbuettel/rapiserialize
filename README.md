@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN](https://www.r-pkg.org/badges/version/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize)
 [![Dependencies](https://tinyverse.netlify.com/badge/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize)
-[![Downloads](http://cranlogs.r-pkg.org/badges/RApiSerialize?color=brightgreen)](http://www.r-pkg.org/pkg/RApiSerialize)
+[![Downloads](https://cranlogs.r-pkg.org/badges/RApiSerialize?color=brightgreen)](https://www.r-pkg.org/pkg/RApiSerialize)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rapiserialize)](https://github.com/eddelbuettel/rapiserialize)
 
 ### Synopsis
@@ -19,7 +19,7 @@ throughput, or other cases of a need for high performance.  Or maybe you are
 just impatient and want the result faster.
 
 This package owes a lot of debt to the
-[Rhpc](http://cran.rstudio.com/package=Rhpc) package by 
+[Rhpc](https://cran.r-project.org/package=Rhpc) package by 
 Ei-ji Nakama and Junji Nakano. It gave me the idea of using a copy of the
 code which is not exported by R itself.  And of course credit is due to the R
 Core team for writing R, and the code used here.
