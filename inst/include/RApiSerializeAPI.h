@@ -47,10 +47,10 @@ extern "C" {
 /* provided the interface for the function exported 	*/
 /* in ../src/init.c via R_RegisterCCallable()		*/
 
-SEXP attribute_hidden serializeToRaw(SEXP x) {
+SEXP attribute_hidden serializeToRaw(SEXP x, SEXP ver = R_NilValue) {
     static SEXP(*fun)(SEXP, SEXP) =
         (SEXP(*)(SEXP,SEXP)) R_GetCCallable("RApiSerialize", "serializeToRaw");
-    return fun(x);
+    return fun(x, ver);
 }
 
 SEXP attribute_hidden unserializeFromRaw(SEXP x) {
