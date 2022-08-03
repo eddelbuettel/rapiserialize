@@ -1,9 +1,9 @@
 ## RApiSerialize: C-level Serialization from R 
 
 [![CI](https://github.com/eddelbuettel/rapiserialize/workflows/ci/badge.svg)](https://github.com/eddelbuettel/rapiserialize/actions?query=workflow%3Aci)
-[![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
-[![CRAN](http://www.r-pkg.org/badges/version/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize) 
-[![Dependencies](https://tinyverse.netlify.com/badge/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize) 
+[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
+[![CRAN](https://www.r-pkg.org/badges/version/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize)
+[![Dependencies](https://tinyverse.netlify.com/badge/RApiSerialize)](https://cran.r-project.org/package=RApiSerialize)
 [![Downloads](http://cranlogs.r-pkg.org/badges/RApiSerialize?color=brightgreen)](http://www.r-pkg.org/pkg/RApiSerialize)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rapiserialize)](https://github.com/eddelbuettel/rapiserialize)
 

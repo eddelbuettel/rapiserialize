@@ -48,8 +48,8 @@ extern "C" {
 /* in ../src/init.c via R_RegisterCCallable()		*/
 
 SEXP attribute_hidden serializeToRaw(SEXP x) {
-    static SEXP(*fun)(SEXP) = 
-        (SEXP(*)(SEXP)) R_GetCCallable("RApiSerialize", "serializeToRaw");
+    static SEXP(*fun)(SEXP, SEXP) =
+        (SEXP(*)(SEXP,SEXP)) R_GetCCallable("RApiSerialize", "serializeToRaw");
     return fun(x);
 }
 

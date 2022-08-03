@@ -1,8 +1,8 @@
 Package: RApiSerialize
 Type: Package
 Title: R API Serialization 
-Version: 0.1.0.1
-Date: 2019-01-03
+Version: 0.1.0.2
+Date: 2022-08-03
 Author: Dirk Eddelbuettel, Ei-ji Nakama, Junji Nakano, and R Core (original code)
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: Access to the internal R serialization code is provided for

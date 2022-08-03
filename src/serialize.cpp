@@ -193,14 +193,19 @@ static SEXP CloseMemOutPStream(R_outpstream_t stream)
 
 /** ---- **/
 
-extern "C" SEXP serializeToRaw(SEXP object) {
+extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue) {
     struct R_outpstream_st out;
     R_pstream_format_t type;
     int version;
     struct membuf_st mbs;
     SEXP val;
-    
-    version = R_DefaultSerializeVersion;
+
+    if (versionSexp == R_NilValue) {
+      version = R_DefaultSerializeVersion;
+    } else {
+      version = Rf_asInteger(versionSexp);
+    }
+
     //type = R_pstream_binary_format;
     //type = R_pstream_ascii_format;
     type = R_pstream_xdr_format;

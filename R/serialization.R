@@ -18,8 +18,8 @@
 ##  You should have received a copy of the GNU General Public License
 ##  along with RApiSerialize.  If not, see <http://www.gnu.org/licenses/>.
 
-serializeToRaw <- function(obj) {
-    .Call("serializeToRaw", obj, PACKAGE="RApiSerialize")
+serializeToRaw <- function(obj, version=2) {
+    .Call("serializeToRaw", obj, version, PACKAGE="RApiSerialize")
 }
 
 unserializeFromRaw <- function(obj) {

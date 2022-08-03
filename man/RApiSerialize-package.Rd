@@ -16,11 +16,12 @@
   provided at the R level.
 }
 \usage{
-  serializeToRaw(obj)
+  serializeToRaw(obj, version=2)
   unserializeFromRaw(obj)
 }
 \arguments{
   \item{obj}{An R object which is going to (un)serialized by the corresponding function.}
+  \item{version}{An integer selection the R serialization format. Default is 2, and values 2 or 3 are currently supported.}
 }
 \details{
   The C code in this package is taken from R source code, where it

@@ -1,3 +1,16 @@
+2022-08-03  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version and date
+
+	* src/serialize.cpp (serializeToRaw): Support serialization version
+	argument to select 2 (pre-ALTREP) or 3 (with ALTREP support)
+	* src/init.c (callMethods): Update interface
+	* inst/include/RApiSerializeAPI.h (serializeToRaw): Idem
+	* R/serialization.R (serializeToRaw): Support new argument
+	* man/RApiSerialize-package.Rd: Document new argument
+
+	* README.md: Update http URLs to https
+
 2021-04-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (URL, BugRreports): Added to DESCRIPTION file

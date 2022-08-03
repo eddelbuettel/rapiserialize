@@ -27,13 +27,13 @@
 
 /*  function declarations -- could be in external header file if used  */
 /*  by functions in anotherfile in this package                        */
-SEXP serializeToRaw(SEXP object);
+SEXP serializeToRaw(SEXP object, SEXP versionSexp);
 SEXP unserializeFromRaw(SEXP object);
 
 
 /* definition of functions provided for .Call() 			*/
 static const R_CallMethodDef callMethods[] = {
-    { "serializeToRaw",    	(DL_FUNC) &serializeToRaw,          1 },
+    { "serializeToRaw",    	(DL_FUNC) &serializeToRaw,          2 },
     { "unserializeFromRaw",  	(DL_FUNC) &unserializeFromRaw,      1 },
     { NULL,                	NULL,                               0 }
 };
