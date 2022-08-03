@@ -2,7 +2,7 @@
 //
 //  RApiSerialize -- Packge to provide Serialization as in the R API 
 //
-//  Copyright (C) 2014         Dirk Eddelbuettel 
+//  Copyright (C) 2014 - 2022  Dirk Eddelbuettel
 //  Copyright (C) 2013 - 2014  Ei-ji Nakama and Junji Nakano
 //  Copyright (C) 1995 - 2013  The R Core Team
 //
@@ -183,7 +183,11 @@ static SEXP CloseMemOutPStream(R_outpstream_t stream)
 {
     SEXP val;
     membuf_t mb = (membuf_t) stream->data;
-
+    /* duplicate check, for future proofing */
+#ifndef LONG_VECTOR_SUPPORT
+    if(mb->count > INT_MAX)
+	error(_("serialization is too large to store in a raw vector"));
+#endif
     PROTECT(val = allocVector(RAWSXP, mb->count));
     memcpy(RAW(val), mb->buf, mb->count);
     free_mem_buffer(mb);
