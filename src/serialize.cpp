@@ -186,7 +186,7 @@ static SEXP CloseMemOutPStream(R_outpstream_t stream)
     /* duplicate check, for future proofing */
 #ifndef LONG_VECTOR_SUPPORT
     if(mb->count > INT_MAX)
-	error(_("serialization is too large to store in a raw vector"));
+	error("serialization is too large to store in a raw vector");
 #endif
     PROTECT(val = allocVector(RAWSXP, mb->count));
     memcpy(RAW(val), mb->buf, mb->count);
