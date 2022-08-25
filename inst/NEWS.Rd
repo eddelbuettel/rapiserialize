@@ -2,6 +2,13 @@
 \title{News for Package \pkg{RApiSerialize}}
 \newcommand{\cpkg}{\href{http://CRAN.R-project.org/package=#1}{\pkg{#1}}}
 
+\section{Changes in version 0.1.2 (2022-08-25)}{
+  \itemize{
+    \item Correct on \code{error()} call (when missing long vector
+    support) to not use i18n macro
+  }
+}
+
 \section{Changes in version 0.1.1 (2022-08-07)}{
   \itemize{
     \item Updated CI use to \href{https://eddelbuettel.github.io/r-ci/}{r-ci}

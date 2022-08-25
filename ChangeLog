@@ -1,3 +1,10 @@
+2022-08-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.1.2
+
+	* src/serialize.cpp (CloseMemOutPStream): Correct error() call
+	when missing long vector support to not use i18n macro
+
 2022-08-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.1.1
