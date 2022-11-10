@@ -4,7 +4,7 @@
 
 \section{Changes in version 0.1.2 (2022-08-25)}{
   \itemize{
-    \item Correct on \code{error()} call (when missing long vector
+    \item Correct an \code{error()} call (when missing long vector
     support) to not use i18n macro
   }
 }
