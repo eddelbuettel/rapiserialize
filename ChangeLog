@@ -1,3 +1,10 @@
+2024-05-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/serialization.R (serializeToRaw): Add an xdr=TRUE argument
+	* man/RApiSerialize-package.Rd: Document it
+	* tests/simpleTests.R: Add simple tests for xdr feature
+	* tests/simpleTests.Rout.save: Idem
+
 2024-05-10  Travers Ching  <traversc@gmail.com>
 
 	* src/serialize.cpp (serializeToRaw): Add xdr argument, 
