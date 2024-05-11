@@ -16,3 +16,8 @@ identical(unserializeFromRaw(serializeToRaw(fit,3)), fit)
 identical(unserializeFromRaw(serialize(fit, NULL)), fit)
 ## R's serialize and R's unserialize (doh)
 identical(unserialize(serialize(fit, NULL)), fit)
+## serialize and use our unserialize, no xdr
+identical(unserializeFromRaw(serializeToRaw(fit,2,TRUE)), fit)
+identical(unserializeFromRaw(serializeToRaw(fit,3,TRUE)), fit)
+identical(unserializeFromRaw(serializeToRaw(fit,2,FALSE)), fit)
+identical(unserializeFromRaw(serializeToRaw(fit,3,FALSE)), fit)

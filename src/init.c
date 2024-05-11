@@ -1,8 +1,7 @@
-/* -*- mode: C; c-indent-level: 4; c-basic-offset: 4; indent-tabs-mode: nil; -*- */
 /*
  *  RApiSerialize -- Packge to provide Serialization as in the R API 
  *
- *  Copyright (C) 2014 - 2022  Dirk Eddelbuettel
+ *  Copyright (C) 2014 - 2024  Dirk Eddelbuettel
  *
  *  This file is part of RApiSerialize.
  *
@@ -27,13 +26,13 @@
 
 /*  function declarations -- could be in external header file if used  */
 /*  by functions in anotherfile in this package                        */
-SEXP serializeToRaw(SEXP object, SEXP versionSexp);
+SEXP serializeToRaw(SEXP object, SEXP versionSexp, SEXP useXdrSexp);
 SEXP unserializeFromRaw(SEXP object);
 
 
 /* definition of functions provided for .Call() 			*/
 static const R_CallMethodDef callMethods[] = {
-    { "serializeToRaw",    	(DL_FUNC) &serializeToRaw,          2 },
+    { "serializeToRaw",    	(DL_FUNC) &serializeToRaw,          3 },
     { "unserializeFromRaw",  	(DL_FUNC) &unserializeFromRaw,      1 },
     { NULL,                	NULL,                               0 }
 };

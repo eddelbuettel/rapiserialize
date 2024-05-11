@@ -1,7 +1,7 @@
 
-R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
-Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -41,7 +41,16 @@ Type 'q()' to quit R.
 > ## R's serialize and R's unserialize (doh)
 > identical(unserialize(serialize(fit, NULL)), fit)
 [1] TRUE
+> ## serialize and use our unserialize, no xdr
+> identical(unserializeFromRaw(serializeToRaw(fit,2,TRUE)), fit)
+[1] TRUE
+> identical(unserializeFromRaw(serializeToRaw(fit,3,TRUE)), fit)
+[1] TRUE
+> identical(unserializeFromRaw(serializeToRaw(fit,2,FALSE)), fit)
+[1] TRUE
+> identical(unserializeFromRaw(serializeToRaw(fit,3,FALSE)), fit)
+[1] TRUE
 > 
 > proc.time()
    user  system elapsed 
-  0.143   0.015   0.151 
+  0.355   0.481   0.174 
