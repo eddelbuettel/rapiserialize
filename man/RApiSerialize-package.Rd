@@ -16,12 +16,16 @@
   provided at the R level.
 }
 \usage{
-  serializeToRaw(obj, version=2)
+  serializeToRaw(obj, version=2, xdr=TRUE)
   unserializeFromRaw(obj)
 }
 \arguments{
   \item{obj}{An R object which is going to (un)serialized by the corresponding function.}
-  \item{version}{An integer selection the R serialization format. Default is 2, and values 2 or 3 are currently supported.}
+  \item{version}{An integer selection the R serialization format. Default is
+  2, and values 2 or 3 are currently supported.}
+  \item{xdr}{A logical value selection (portable) XDR encoding which is the
+  default. Use \code{FALSE} for speed-up suitable for common little-endian
+  system at a loss of portability.}
 }
 \details{
   The C code in this package is taken from R source code, where it
