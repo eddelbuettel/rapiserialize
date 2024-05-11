@@ -63,6 +63,11 @@
 
 #include <stdlib.h>
 #include <string.h>
+
+#ifndef R_NO_REMAP
+ #define R_NO_REMAP
+#endif
+
 // does not seem to be needed #define USE_INTERNAL
 #include <Rinternals.h>
 
@@ -85,7 +90,7 @@ typedef struct membuf_st {
 static void resize_buffer(membuf_t mb, R_xlen_t needed) {
     unsigned char *tmp;
     if (needed > R_XLEN_T_MAX)
-	error("serialization is too large to store in a raw vector");
+	Rf_error("serialization is too large to store in a raw vector");
     #ifdef LONG_VECTOR_SUPPORT
         if(needed < 10000000) /* ca 10MB */
             needed = (1+2*needed/INCR) * INCR;
@@ -102,7 +107,7 @@ static void resize_buffer(membuf_t mb, R_xlen_t needed) {
     tmp = (unsigned char*) realloc((void*) mb->buf, (size_t) needed);
     if (tmp == NULL) {
 	free(mb->buf); mb->buf = NULL;
-	error("cannot allocate buffer");
+	Rf_error("cannot allocate buffer");
     } else mb->buf = tmp;
     mb->size = needed;
 }
@@ -122,7 +127,7 @@ static void OutBytesMem(R_outpstream_t stream, void *buf, int length)
     #ifndef LONG_VECTOR_SUPPORT
         /* There is a potential overflow here on 32-bit systems */
         if ((double) mb->count + length > (double) INT_MAX)
-            error("serialization is too large to store in a raw vector");
+            Rf_error("serialization is too large to store in a raw vector");
     #endif
     if (needed > mb->size) resize_buffer(mb, needed);
     memcpy(mb->buf + mb->count, buf, length);
@@ -133,7 +138,7 @@ static int InCharMem(R_inpstream_t stream)
 {
     membuf_t mb = (membuf_t) stream->data;
     if (mb->count >= mb->size)
-	error("read error");
+	Rf_error("read error");
     return mb->buf[mb->count++];
 }
 
@@ -141,7 +146,7 @@ static void InBytesMem(R_inpstream_t stream, void *buf, int length)
 {
     membuf_t mb = (membuf_t) stream->data;
     if (mb->count + (R_xlen_t) length > mb->size)
-	error("read error");
+	Rf_error("read error");
     memcpy(buf, mb->buf + mb->count, length);
     mb->count += length;
 }
@@ -185,9 +190,9 @@ static SEXP CloseMemOutPStream(R_outpstream_t stream)
     /* duplicate check, for future proofing */
 #ifndef LONG_VECTOR_SUPPORT
     if(mb->count > INT_MAX)
-	error("serialization is too large to store in a raw vector");
+	Rf_error("serialization is too large to store in a raw vector");
 #endif
-    PROTECT(val = allocVector(RAWSXP, mb->count));
+    PROTECT(val = Rf_allocVector(RAWSXP, mb->count));
     memcpy(RAW(val), mb->buf, mb->count);
     free_mem_buffer(mb);
     UNPROTECT(1);
@@ -197,7 +202,7 @@ static SEXP CloseMemOutPStream(R_outpstream_t stream)
 /** ---- **/
 
 extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue,
-                               SEXP use_xdrSexp = R_NilValue) {
+                               SEXP useXdrSexp = R_NilValue) {
     struct R_outpstream_st out;
     R_pstream_format_t type;
     int version;
@@ -217,10 +222,10 @@ extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue,
     //type = R_pstream_binary_format;
     //type = R_pstream_ascii_format;
     //type = R_pstream_xdr_format;
-    if (use_xdrSexp == R_NilValue) {
+    if (useXdrSexp == R_NilValue) {
         type = R_pstream_xdr_format;
     } else {
-        int use_xdr = Rf_asLogical(use_xdrSexp);
+        int use_xdr = Rf_asLogical(useXdrSexp);
         if (use_xdr) {
             type = R_pstream_xdr_format;
         } else {
@@ -254,7 +259,7 @@ extern "C" SEXP unserializeFromRaw(SEXP object) {
         InitMemInPStream(&in, &mbs, data,  length, NULL, NULL);
         return R_Unserialize(&in);
     }
-    error("can't unserialize object");
+    Rf_error("can't unserialize object");
     return(R_UnboundValue);
 }
 

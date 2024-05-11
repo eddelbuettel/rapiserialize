@@ -19,7 +19,7 @@
 ##  along with RApiSerialize.  If not, see <http://www.gnu.org/licenses/>.
 
 serializeToRaw <- function(obj, version=2, xdr=TRUE) {
-    .Call(C_serializeToRaw, obj, version)
+    .Call(C_serializeToRaw, obj, version, xdr)
 }
 
 unserializeFromRaw <- function(obj) {

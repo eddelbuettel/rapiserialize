@@ -5,9 +5,12 @@
 	* tests/simpleTests.R: Add simple tests for xdr feature
 	* tests/simpleTests.Rout.save: Idem
 
+	* src/serialize.cpp: Define R_NO_REMAP, switch to Rf_error and
+	Rf_allocVector
+
 2024-05-10  Travers Ching  <traversc@gmail.com>
 
-	* src/serialize.cpp (serializeToRaw): Add xdr argument, 
+	* src/serialize.cpp (serializeToRaw): Add xdr argument,
 	set to false to use binary format instead
 	* inst/include/RApiSerializeAPI.h (serializeToRaw): Idem
 
