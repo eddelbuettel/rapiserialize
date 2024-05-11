@@ -197,7 +197,8 @@ static SEXP CloseMemOutPStream(R_outpstream_t stream)
 
 /** ---- **/
 
-extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue) {
+extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue,
+                               SEXP use_xdrSexp = R_NilValue) {
     struct R_outpstream_st out;
     R_pstream_format_t type;
     int version;
@@ -210,13 +211,23 @@ extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue) {
       version = Rf_asInteger(versionSexp);
     }
     if (version == NA_INTEGER || version <= 0) {
-	Rf_error("bad version value");
+      Rf_error("bad version value");
     }
-
+    
+    
     //type = R_pstream_binary_format;
     //type = R_pstream_ascii_format;
-    type = R_pstream_xdr_format;
-    
+    //type = R_pstream_xdr_format;
+    if(use_xdrSexp == R_NilValue) {
+      type = R_pstream_xdr_format;
+    } else {
+      int use_xdr = Rf_asLogical(use_xdrSexp);
+      if(use_xdr) {
+        type = R_pstream_xdr_format;
+      } else {
+        type = R_pstream_binary_format;
+      }
+    }
 
     /* set up a context which will free the buffer if there is an error */
     

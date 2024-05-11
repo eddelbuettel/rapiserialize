@@ -1,3 +1,9 @@
+2024-05-10  Travers Ching  <traversc@gmail.com>
+
+	* src/serialize.cpp (serializeToRaw): Add xdr argument, 
+	set to false to use binary format instead
+	* inst/include/RApiSerializeAPI.h (serializeToRaw): Idem
+
 2024-02-23  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml (jobs): Update to actions/checkout@v4,
