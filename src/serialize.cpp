@@ -1,8 +1,7 @@
-// -*- mode: C++; c-indent-level: 4; c-basic-offset: 4; indent-tabs-mode: nil; -*-
 //
 //  RApiSerialize -- Packge to provide Serialization as in the R API 
 //
-//  Copyright (C) 2014 - 2022  Dirk Eddelbuettel
+//  Copyright (C) 2014 - 2024  Dirk Eddelbuettel
 //  Copyright (C) 2013 - 2014  Ei-ji Nakama and Junji Nakano
 //  Copyright (C) 1995 - 2013  The R Core Team
 //
@@ -206,27 +205,27 @@ extern "C" SEXP serializeToRaw(SEXP object, SEXP versionSexp = R_NilValue,
     SEXP val;
 
     if (versionSexp == R_NilValue) {
-      version = R_DefaultSerializeVersion;
+        version = R_DefaultSerializeVersion;
     } else {
-      version = Rf_asInteger(versionSexp);
+        version = Rf_asInteger(versionSexp);
     }
     if (version == NA_INTEGER || version <= 0) {
-      Rf_error("bad version value");
+        Rf_error("bad version value");
     }
     
     
     //type = R_pstream_binary_format;
     //type = R_pstream_ascii_format;
     //type = R_pstream_xdr_format;
-    if(use_xdrSexp == R_NilValue) {
-      type = R_pstream_xdr_format;
-    } else {
-      int use_xdr = Rf_asLogical(use_xdrSexp);
-      if(use_xdr) {
+    if (use_xdrSexp == R_NilValue) {
         type = R_pstream_xdr_format;
-      } else {
-        type = R_pstream_binary_format;
-      }
+    } else {
+        int use_xdr = Rf_asLogical(use_xdrSexp);
+        if (use_xdr) {
+            type = R_pstream_xdr_format;
+        } else {
+            type = R_pstream_binary_format;
+        }
     }
 
     /* set up a context which will free the buffer if there is an error */

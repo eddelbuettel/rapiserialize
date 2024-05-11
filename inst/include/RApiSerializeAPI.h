@@ -1,8 +1,7 @@
-/* -*- mode: C; c-indent-level: 4; c-basic-offset: 4; indent-tabs-mode: nil; -*- */
 /*
  *  RApiSerialize -- Packge to provide Serialization as in the R API 
  *
- *  Copyright (C) 2014  Dirk Eddelbuettel 
+ *  Copyright (C) 2014-2024  Dirk Eddelbuettel
  *
  *  This file is part of RApiSerialize.
  *
