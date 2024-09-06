@@ -3,8 +3,11 @@ Type: Package
 Title: R API Serialization 
 Version: 0.1.3
 Date: 2024-05-13
-Author: Dirk Eddelbuettel, Ei-ji Nakama, Junji Nakano, and R Core (original code)
-Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Authors@R: c(person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org",
+                    comment = c(ORCID = "0000-0001-6419-907X")),
+             person("Ei-ji", "Nakama", role = "aut", comment = "Code in package Rhpc"),
+             person("Junji", "Nakano", role = "aut", comment = "Code in package Rhpc"),
+             person("R Core", role = "aut", comment = "Code from R in src/main/serialize.c"))
 Description: Access to the internal R serialization code is provided for
  use by other packages at the C function level by using the registration of
  native function mechanism. Client packages simply include a single header
