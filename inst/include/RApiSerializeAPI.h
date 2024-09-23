@@ -20,8 +20,13 @@
  */
 
 
-/* This header file provides the interface used by other packages, */
-/* and should be included once per package.                        */
+/*
+   This header file provides the interface used by other packages,
+   and should be included once per package. At present, the file
+   contains default arguments to serializeToRaw which make use from
+   C++ easier. We may remove these in a future release.
+*/
+
 
 #ifndef _R_Api_Serialize_API_h_
 #define _R_Api_Serialize_API_h_

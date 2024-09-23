@@ -1,3 +1,7 @@
+2024-09-23  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/RApiSerializeAPI.h: Added comment on C++	preference
+
 2024-09-06  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Authors@R): Added
