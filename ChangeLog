@@ -1,3 +1,7 @@
+2024-09-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/RApiSerializeAPI.h: Add C++ namespace
+
 2024-09-23  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/include/RApiSerializeAPI.h: Added comment on C++	preference
@@ -147,4 +151,3 @@
 	* R/serialization.R: Simple R wrappers for testing
 
 	* man/RApiSerialize-package.Rd: Basic documentation
-
