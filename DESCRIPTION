@@ -1,8 +1,8 @@
 Package: RApiSerialize
 Type: Package
-Title: R API Serialization 
-Version: 0.1.3
-Date: 2024-05-13
+Title: R API Serialization
+Version: 0.1.3.1
+Date: 2024-09-26
 Authors@R: c(person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org",
                     comment = c(ORCID = "0000-0001-6419-907X")),
              person("Ei-ji", "Nakama", role = "aut", comment = "Code in package Rhpc"),
@@ -15,7 +15,7 @@ Description: Access to the internal R serialization code is provided for
  the Rhpc package by Ei-ji Nakama and Junji Nakano which also includes a
  (partial) copy of the file src/main/serialize.c from R itself. The R Core
  group is the original author of the serialization code made available by
- this package. 
+ this package.
 URL: https://github.com/eddelbuettel/rapiserialize, https://dirk.eddelbuettel.com/code/rapiserialize.html
 BugReports: https://github.com/eddelbuettel/rapiserialize/issues
 License: GPL (>= 2)

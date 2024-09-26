@@ -1,5 +1,7 @@
 2024-09-26  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Roll minor version and date
+
 	* .editorconfig: Added
 	* .Rbuildignore: Updated
 	* cleanup: Added
