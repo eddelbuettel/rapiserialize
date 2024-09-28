@@ -2,7 +2,16 @@
 \title{News for Package \pkg{RApiSerialize}}
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rapiserialize/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rapiserialize/issues/#1}{##1}}
-\newcommand{\cpkg}{\href{http://CRAN.R-project.org/package=#1}{\pkg{#1}}}
+\newcommand{\cpkg}{\href{https://CRAN.R-project.org/package=#1}{\pkg{#1}}}
+
+\section{Changes in version 0.1.4 (2024-09-28)}{
+  \itemize{
+    \item Add C++ namespace in APU header (Dirk in \ghpr{9} closing
+    \ghit{8})
+    \item Several packaging updates: switched to Authors@R, README.md badge
+    updates, added .editorconfig and cleanup
+  }
+}
 
 \section{Changes in version 0.1.3 (2024-05-13)}{
   \itemize{
@@ -36,5 +45,5 @@
     \item Two simple functions \code{serializeToRaw} and
       \code{unserializeFromRaw} are provided in this version; each takes
       a \code{SEXP} argument and returns a \code{SEXP} argument
-  } 
+  }
 }
