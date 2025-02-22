@@ -6,7 +6,7 @@
 
 \section{Changes in version 0.1.4 (2024-09-28)}{
   \itemize{
-    \item Add C++ namespace in APU header (Dirk in \ghpr{9} closing
+    \item Add C++ namespace in API header (Dirk in \ghpr{9} closing
     \ghit{8})
     \item Several packaging updates: switched to Authors@R, README.md badge
     updates, added .editorconfig and cleanup

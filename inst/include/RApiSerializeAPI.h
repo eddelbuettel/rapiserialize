@@ -1,7 +1,7 @@
 /*
  *  RApiSerialize -- Package to provide Serialization as in the R API
  *
- *  Copyright (C) 2014-2024  Dirk Eddelbuettel
+ *  Copyright (C) 2014-2025  Dirk Eddelbuettel
  *
  *  This file is part of RApiSerialize.
  *
@@ -22,9 +22,7 @@
 
 /*
    This header file provides the interface used by other packages,
-   and should be included once per package. At present, the file
-   contains default arguments to serializeToRaw which make use from
-   C++ easier. We may remove these in a future release.
+   and should be included once per package.
 */
 
 
@@ -51,8 +49,7 @@ extern "C" {
 /* provided the interface for the function exported 	*/
 /* in ../src/init.c via R_RegisterCCallable()		*/
 
-SEXP attribute_hidden serializeToRaw(SEXP x, SEXP ver = R_NilValue,
-                                     SEXP use_xdr = R_NilValue) {
+SEXP attribute_hidden serializeToRaw(SEXP x, SEXP ver, SEXP use_xdr) {
     static SEXP(*fun)(SEXP, SEXP, SEXP) =
         (SEXP(*)(SEXP,SEXP,SEXP)) R_GetCCallable("RApiSerialize", "serializeToRaw");
     return fun(x, ver, use_xdr);
